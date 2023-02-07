@@ -1,0 +1,37 @@
+<div class="bg-light bg-mobile">
+    <div class="navegation fixed-top">
+        <div class="input-group search">
+            <span class="input-group-text" *ngIf="showCategories"><i class="fe-search fw-bold"></i></span>
+            <span class="input-group-text" *ngIf="!showCategories" (click)="filterReset()"><i class="fe-chevron-left fw-bold"></i></span>
+            <input type="text" class="form-control" [(ngModel)]="search" (keyup)="filter()" placeholder="Search . . .">
+            <span class="input-group-text text-gray" routerLink="/home/cart"><i class="fe-shopping-cart"></i></span>
+        </div>
+    </div>
+    <div class="content">
+        <ul class="navbar_list mb-4" *ngIf="showCategories">
+            <li *ngFor="let item of categories" [ngClass]="{'active': item===category}" (click)="filterByCategory(item)">{{item | titlecase}}</li>
+        </ul>
+        <div class="text-center mb-5" *ngIf="!showCategories">
+            <div class="nofound" *ngIf="filteredProducts.length === 0">
+                <i class="fe-search"></i>
+                <h5 class="fw-bold mt-4">No Products Found</h5>
+            </div>
+            <h5 class="fw-bold" *ngIf="filteredProducts.length > 0">Found {{ filteredProducts.length }} result</h5>
+        </div>
+        
+        <div class="row">
+            <div class="col-6" *ngFor="let item of filteredProducts" routerLink="/home/product/{{item._id}}">
+                <div class="card shadow card-product">
+                    <div class="card-body text-center">
+                        <img [src]="item.picture_url" class="shadow-lg">
+                        <p class="name">{{item.name | titlecase}}</p>
+                        <p class="fw-bold text-orange">{{item.price | currency: 'USD'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-100"></div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

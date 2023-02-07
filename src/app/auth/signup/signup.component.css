@@ -1,0 +1,35 @@
+.logo {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.logo .img-logo{
+    margin-top: 40px;
+    width: 150px;
+}
+
+.nav li a {
+    margin: 0px 30px;
+    padding: 5px 40px;
+    color: black;
+    font-weight: bold;
+}
+
+.nav li a:hover {
+    color: #FA4A0C;
+    cursor: pointer;
+}
+
+.nav li .active {
+    border-bottom: 3px solid #FA4A0C;
+}
+
+.form {
+    margin: 0px 40px;
+}
+
+.form-bottom button {
+    margin-top: 40px;
+    border-radius: 25px;
+    padding: 15px;
+}

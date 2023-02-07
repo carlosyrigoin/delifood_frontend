@@ -1,0 +1,37 @@
+.card-product {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    border-radius: 20px;
+    padding: 10px 20px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-product img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    box-shadow: -1px 12px 15px 0px rgba(171, 170, 170, 0.65);
+}
+
+.card-product .info{
+    margin-left: 15px;
+}
+
+.card-product .counter {
+    background-color: #FA4A0C;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+    bottom: 22px;
+    border-radius: 30px;
+    padding: 0 4px;
+    line-height: 13px;
+}
+
+.counter span {
+    display: inline-block;
+    padding: 4px;
+}

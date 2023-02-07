@@ -1,0 +1,33 @@
+<div class="bg-light bg-mobile">
+    <app-navegation [title]="'Cart'" [routeback]="'home'"></app-navegation>
+
+    <div class="content">
+        <div class="nofound text-center" *ngIf="products.length === 0">
+            <i class="fe-shopping-cart"></i>
+            <h5 class="fw-bold mt-4">No Items in the Cart</h5>
+        </div>
+
+        <div class="card-product" *ngFor="let item of products">
+            <img [src]="item.picture_url" alt="" />
+            <div class="info">
+                <h5 class="fw-bold">{{ item.name }}</h5>
+                <p class="text-orange fw-bold">{{ (item.price || 0) * (item.quantity || 0) | currency }}</p>
+            </div>
+            <div class="counter">
+                <span (click)="reduceQuantity(item)">&minus;</span>
+                {{ item.quantity }}
+                <span (click)="incrementQuantity(item)">&plus;</span>
+            </div>
+        </div>
+
+        <div class="fm-bottom-xs d-grid" *ngIf="products.length > 0">
+            <div class="d-flex justify-content-between mt-5">
+                <span class="ms-2 me-auto">Total</span>
+                <h5 class="fw-bold">{{ total | currency }}</h5>
+            </div>
+            <button type="button" class="btn btn-warning" routerLink="/home/checkout">Checkout</button>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

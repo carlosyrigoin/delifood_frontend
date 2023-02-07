@@ -1,0 +1,34 @@
+<div class="bg-light bg-mobile">
+    <app-navegation [title]="'History'" [routeback]="'home'"></app-navegation>
+
+    <div class="content">
+        <div class="nofound text-center" *ngIf="orders.length === 0">
+            <i class="fe-file"></i>
+            <h5 class="fw-bold mt-4">No History Yet</h5>
+        </div>
+
+        <div class="card mb-4" *ngFor="let item of orders">
+            <div class="card-body">
+                <span>{{item.date | date:'EEEE, MMMM d, y'}}</span>
+                <div class="d-flex justify-content-between">
+                    <span class="me-auto">Items: {{item.items.length}}</span>
+                    <span class="fw-bold text-orange">{{item.total | currency:'USD'}}</span>
+                </div>
+                <div *ngIf="item.state" class="text-end" (click)="item.state = false"><i class="fe-chevron-down"></i></div>
+                <div *ngIf="!item.state">
+                    <span class="fw-bold">Order</span>
+                    <div class="d-flex justify-content-between" *ngFor="let i of item.items">
+                        <span class="me-auto">{{i.quantity}}-{{i.description | titlecase}}</span>
+                        <span class="fw-bold text-orange">{{i.price * i.quantity | currency:'USD'}}</span>
+                    </div>
+                    <hr>
+                    <span class="fw-bold">Delivery</span>
+                    <p class="mb-0">{{item.delivery_address}} </p>
+                    <div class="text-end" (click)="item.state = true"><i class="fe-chevron-up"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

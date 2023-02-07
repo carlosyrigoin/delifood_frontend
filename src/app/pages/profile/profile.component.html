@@ -1,0 +1,62 @@
+<div class="bg-light bg-mobile">
+    <app-navegation [title]="'My Profile'" [routeback]="'home'"></app-navegation>
+
+    <div class="content" *ngIf="change===false">
+        <div class="d-flex justify-content-between">
+            <div class="ms-2 me-auto fw-bold">Personal details</div>
+            <span><a class="ms-auto text-orange" (click)="update_change()">change</a></span>
+        </div>
+        <div class="card mb-5 mt-3 shadow" *ngIf="user">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{user.name}}</li>
+                    <li class="list-group-item">{{user.email}}</li>
+                    <li class="list-group-item" *ngIf="user.phone !== ''">{{user.phone}}</li>
+                    <li class="list-group-item" *ngIf="user.address !== ''">{{user.address}}</li>
+                </ul>
+            </div>
+        </div>
+        <ul class="card list-group p-3 shadow">
+            <li class="d-flex justify-content-between" routerLink="/history">
+                <div class="ms-2 me-auto fw-bold">History</div>
+                <span><i class="fe-chevron-right fw-bold"></i></span>
+            </li>
+        </ul>
+        <div class="fm-bottom d-grid">
+            <button type="button" class="btn btn-warning" (click)="logout()">Logout</button>
+        </div>
+        <div class="mb-100"></div>
+    </div>
+
+    <div class="content" *ngIf="change===true">
+        <h6 class="fw-bold mb-4">Update personal details</h6>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">Name</label>
+                        <input type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">Email</label>
+                        <input type="email" class="form-control" formControlName="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">Phone</label>
+                        <input type="text" class="form-control" formControlName="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-secondary">Address</label>
+                        <input type="text" class="form-control" formControlName="address">
+                    </div>
+                </div>
+            </div>
+            <div class="fm-bottom d-grid">
+                <button type="submit" class="btn btn-warning">Update</button>
+            </div>
+        </form>
+        <div class="mb-100"></div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

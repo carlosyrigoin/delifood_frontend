@@ -1,0 +1,23 @@
+<div class="bg-light bg-mobile">
+    <div class="shadow-sm bg-white text-center logo">
+        <img src="../../../assets/img/logo.png" class="img-logo" alt="logo">
+    
+        <ul class="nav justify-content-center mt-5">
+            <li class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
+            <li class="nav-item"><a class="nav-link active">Sign-up</a></li>
+        </ul>
+    </div>
+    <form class="form mt-5" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="mb-5">
+            <label class="form-label fw-bold text-secondary">Email address</label>
+            <input type="email" class="form-control" placeholder="name@example.com" formControlName="email" required>
+        </div>
+        <div class="mb-5">
+            <label class="form-label fw-bold text-secondary">Password</label>
+            <input type="password" class="form-control" placeholder="**********" formControlName="password" required>
+        </div>
+        <div class="form-bottom d-grid">
+            <button type="submit" class="btn btn-warning">Sign-up</button>
+        </div>
+    </form>
+</div>

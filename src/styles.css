@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    width: 400px;
+    margin: auto;
+    background-image: url("../src/assets/img/fondo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-mobile{
+    height: 100vh;
+}
+
+.navegation{
+    padding: 40px 40px 20px;
+    background-color: #f8f9fa;
+    z-index: 2;
+}
+
+.navegation a{
+    text-decoration: none;
+    font-size: 20px;
+    float: left;
+}
+
+.navegation span{
+    font-size: 20px;
+}
+
+.fixed-top {
+    width: 400px;
+    margin: auto;
+}
+
+.fixed-bottom {
+    width: 400px;
+    margin: auto;
+}
+
+.content{
+    padding-top: 90px;
+    margin: 10px 40px;
+}
+
+.card{
+    border-radius: 30px !important;
+    border:none; 
+}
+
+.text-orange {
+    text-decoration: none;
+    color: #FA4A0C;
+}
+
+.text-gray{
+    color: gray;
+}
+
+.mb-100{
+    margin-bottom: 100px;
+}
+
+.nofound{
+    margin-top: 25%;
+}
+
+.nofound i{
+    font-size: 80px;
+    color: gray;
+}
+
+.fm-bottom button {
+    margin-top: 150px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.fm-bottom-xs {
+    margin-top: 70px;
+}
+
+.fm-bottom-xs button {
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 15px;
+}

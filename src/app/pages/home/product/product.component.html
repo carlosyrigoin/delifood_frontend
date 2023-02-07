@@ -1,0 +1,20 @@
+<div class="bg-light bg-mobile">
+    <app-navegation [title]="''" [routeback]="'home'"></app-navegation>
+
+    <div class="content">
+        <div class="text-center">
+            <img [src]="product.picture_url" class="product-img shadow-lg mb-5">
+            <h4 class="fw-bold">{{product.name | titlecase}}</h4>
+            <p class="text-orange fw-bold fs-4">{{product.price | currency:'USD'}}</p>
+        </div>
+        <span class="fw-bold">Description</span>
+        <p class="product-description">{{product.description}}</p>
+
+        <div class="fm-bottom-xs d-grid">
+            <button type="button" class="btn btn-warning" [disabled]="isAddCart" (click)="onClick()">{{labelBtn}}</button>
+        </div>
+        <div class="mb-100"></div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

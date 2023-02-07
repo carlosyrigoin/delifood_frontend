@@ -1,0 +1,76 @@
+.search span, .search input{
+    background: none;
+    border: none;
+}
+
+.navbar_list {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px 0px;
+}
+
+.navbar_list li {
+    list-style: none;
+    padding: 5px 15px;
+    font-size: 14px;
+    color: gray;
+    border-bottom: 2px solid #F8F9FA;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.navbar_list li:hover {
+    color: #FA4A0C;
+    border-bottom: 2px solid #FA4A0C;
+}
+
+.navbar_list .active {
+    color: #FA4A0C;
+    border-bottom: 2px solid #FA4A0C;
+}
+
+.card-product{
+    margin: 5px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.card-product img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin-top: -40px;
+}
+
+.card-product .name{
+    font-weight: bold;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.navbar_list::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.navbar_list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.navbar_list::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.navbar_list::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+.navbar_list::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+.navbar_list::-webkit-scrollbar-track:hover, .navbar_list::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}

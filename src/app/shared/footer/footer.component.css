@@ -1,0 +1,19 @@
+.footer{
+    padding: 15px 0px;
+    font-size: 18px;
+    background-color: #f8f9fa;
+    z-index: 2;
+}
+
+.footer a {
+    color: gray;
+}
+
+.footer a i:hover {
+    color: #FA4A0C;
+    font-weight: bold;
+}
+
+.footer .nav-active {
+    color: #FA4A0C;
+}

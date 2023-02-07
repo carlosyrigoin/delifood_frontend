@@ -1,0 +1,10 @@
+.product-img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.product-description{
+    font-size: 12px;
+    text-align: justify;
+}
